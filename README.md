@@ -49,6 +49,16 @@ https://git-scm.com/install/windows
 ### 4. Install PNU Font
 Right-click `IPG_201_AIO\PNU-Medium.ttf` → "Install"
 
+### 5. Restore NuGet Packages (First Run Only)
+The `run.bat` script will automatically download and restore the EntityFramework package on first run.
+
+**Manual restore (if automatic fails):**
+```cmd
+cd c:\IPG_201_carDealership
+powershell -Command "Invoke-WebRequest -Uri 'https://www.nuget.org/api/v2/package/EntityFramework/6.5.0' -OutFile 'packages\EntityFramework.6.5.0.zip'"
+powershell -Command "Expand-Archive -Path 'packages\EntityFramework.6.5.0.zip' -DestinationPath 'packages\EntityFramework.6.5.0' -Force"
+```
+
 
 ---
 
@@ -91,6 +101,7 @@ start bin\Debug\carDealershipProject.exe
 | LocalDB instance not found | Install SQL Server LocalDB 2012 |
 | Font 'PNU-Medium' not found | Install PNU-Medium.ttf font |
 | Database connection failed | Check files exist in `datasets\` folder |
+| Could not locate assembly "EntityFramework" | Run `run.bat` to auto-restore packages, or see Manual Restore in Installation Steps |
 
 ---
 
