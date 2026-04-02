@@ -1,5 +1,8 @@
 # Car Dealership Project - IPG201
 
+----------------------------------------
+|THIS PROJECT CAN ONLY BE RUN ON WINDOWS|
+----------------------------------------
 ## Project Description
 
 Educational project for **IPG201** course at **Syrian Virtual University (SVU)**.
@@ -28,6 +31,27 @@ Features:
 
 ---
 
+## Installation Steps
+
+### 1. Install .NET Framework 4.5.2 Developer Pack
+Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net452-developer-pack-offline-installer
+
+### 2. Install SQL Server LocalDB 2012
+Download: https://www.microsoft.com/en-us/download/details.aspx?id=50003
+or google search: sql "localdb" 2012 
+```cmd
+msiexec /i SqlLocalDB2012X64.msi /quiet
+```
+
+### 3. Install git
+https://git-scm.com/install/windows
+
+### 4. Install PNU Font
+Right-click `IPG_201_AIO\PNU-Medium.ttf` → "Install"
+
+
+---
+
 ## Quick Start
 
 ```cmd
@@ -36,24 +60,6 @@ git clone https://github.com/omar-srakbi/IPG_201_carDealership.git
 cd IPG_201_carDealership
 run.bat
 ```
-
----
-
-## Installation Steps
-
-### 1. Install .NET Framework 4.5.2 Developer Pack
-Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net452-developer-pack-offline-installer
-
-### 2. Install SQL Server LocalDB 2012
-Download: https://www.microsoft.com/en-us/download/details.aspx?id=29062
-```cmd
-msiexec /i SqlLocalDB2012X64.msi /quiet
-```
-
-### 3. Install PNU Font
-Right-click `IPG_201_AIO\PNU-Medium.ttf` → "Install for all users"
-
----
 
 ## How to Run
 

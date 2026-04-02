@@ -39,5 +39,5 @@ bld/
 **/packages/*
 
 ## Ignore run scripts
-run.bat
+
 install_and_run.bat
