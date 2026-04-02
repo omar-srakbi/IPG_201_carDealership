@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EF25DD0-3484-462A-8386-D24CD240E02C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>carDealershipProject</RootNamespace>
+    <AssemblyName>carDealershipProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\omars\Desktop\ipgAssinment\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>99F4C79FEE41D48AF5B3E9613169C423F295BD87</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>carDealershipProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.5.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.5.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="datasets\carDealershipDBDataSet.cs">
+      <DependentUpon>carDealershipDBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datasets\carDealershipDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carDealershipDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\carDealershipDBEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carDealershipDBEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\carDealershipDBEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carDealershipDBEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\carDealershipDBEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carDealershipDBEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\carsForRent.cs">
+      <DependentUpon>carDealershipDBEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\carsForSale.cs">
+      <DependentUpon>carDealershipDBEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\login.cs">
+      <DependentUpon>carDealershipDBEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\bookUpForSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\bookUpForSell.Designer.cs">
+      <DependentUpon>bookUpForSell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\ForLeaseCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\ForLeaseCars.Designer.cs">
+      <DependentUpon>ForLeaseCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\ForSaleCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\ForSaleCars.Designer.cs">
+      <DependentUpon>ForSaleCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\admin\adminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\admin\adminMainForm.Designer.cs">
+      <DependentUpon>adminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\admin\editForLeaseCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\admin\editForLeaseCars.Designer.cs">
+      <DependentUpon>editForLeaseCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\admin\editForSaleCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\admin\editForSaleCars.Designer.cs">
+      <DependentUpon>editForSaleCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\admin\editUserLogins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\admin\editUserLogins.Designer.cs">
+      <DependentUpon>editUserLogins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\userMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\userMainForm.Designer.cs">
+      <DependentUpon>userMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="signupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signupForm.Designer.cs">
+      <DependentUpon>signupForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="forms\user\bookUpForSell.resx">
+      <DependentUpon>bookUpForSell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\ForLeaseCars.resx">
+      <DependentUpon>ForLeaseCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\ForSaleCars.resx">
+      <DependentUpon>ForSaleCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\admin\adminMainForm.resx">
+      <DependentUpon>adminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\admin\editForLeaseCars.resx">
+      <DependentUpon>editForLeaseCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\admin\editForSaleCars.resx">
+      <DependentUpon>editForSaleCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\admin\editUserLogins.resx">
+      <DependentUpon>editUserLogins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\userMainForm.resx">
+      <DependentUpon>userMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="signupForm.resx">
+      <DependentUpon>signupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="carDealershipProject_TemporaryKey.pfx" />
+    <None Include="datasets\carDealershipDBDataSet.xsc">
+      <DependentUpon>carDealershipDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\carDealershipDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>carDealershipDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasets\carDealershipDBDataSet.xss">
+      <DependentUpon>carDealershipDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="content\net40\App.config" />
+    <EntityDeploy Include="datasets\carDealershipDBEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>carDealershipDBEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="datasets\carDealershipDBEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carDealershipDBEntityModel.edmx</DependentUpon>
+      <LastGenOutput>carDealershipDBEntityModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="datasets\carDealershipDBEntityModel.edmx.diagram">
+      <DependentUpon>carDealershipDBEntityModel.edmx</DependentUpon>
+    </None>
+    <None Include="datasets\carDealershipDBEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>carDealershipDBEntityModel.edmx</DependentUpon>
+      <LastGenOutput>carDealershipDBEntityModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PNU-Medium.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app_icon1.ico" />
+    <Content Include="datasets\carDealershipDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="datasets\carDealershipDB_log.ldf">
+      <DependentUpon>carDealershipDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\adminCPBackground.png" />
+    <None Include="Resources\mainFormBackground.png" />
+    <None Include="Resources\PNU-Medium.ttf" />
+    <None Include="Resources\ui copy.png" />
+    <None Include="Resources\square_2.png" />
+    <None Include="Resources\square_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

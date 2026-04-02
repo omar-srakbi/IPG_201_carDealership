@@ -1,0 +1,43 @@
+## Visual Studio
+.suo
+.user
+*.user
+*.suo
+*.userosscache
+*.suo.docstates
+[Bb]in/
+[Oo]bj/
+*.pdb
+*.cache
+*.dll
+*.exe
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]uild/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.suo.docstates
+
+## Visual Studio 2015 cache/options directory
+.vs/
+
+## MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## NuGet Packages
+*.nupkg
+**/packages/*
+
+## Ignore run scripts
+run.bat
+install_and_run.bat

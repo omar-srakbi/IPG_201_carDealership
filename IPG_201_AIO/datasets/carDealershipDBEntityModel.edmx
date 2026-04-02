@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="carDealershipDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="carsForRent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="model" Type="varchar" MaxLength="255" />
+          <Property Name="manufactureYear" Type="int" />
+          <Property Name="rentPerDay" Type="money" />
+          <Property Name="rentPricePerMonth" Type="money" />
+          <Property Name="rentPricePerYear" Type="money" />
+          <Property Name="carPhoto" Type="image" />
+          <Property Name="info" Type="varchar" MaxLength="255" />
+          <Property Name="dateAdded" Type="datetime" />
+          <Property Name="isVisable" Type="bit" Nullable="false" />
+          <Property Name="bookedUpDate" Type="date" />
+          <Property Name="endOfRentDate" Type="date" />
+          <Property Name="renterId" Type="int" />
+        </EntityType>
+        <EntityType Name="carsForSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="model" Type="varchar" MaxLength="255" />
+          <Property Name="manufactureYear" Type="int" />
+          <Property Name="color" Type="varchar" MaxLength="255" />
+          <Property Name="isAutoGear" Type="bit" />
+          <Property Name="knownIssues" Type="varchar" MaxLength="255" />
+          <Property Name="sellingPrice" Type="money" />
+          <Property Name="isFinalPrice" Type="bit" />
+          <Property Name="carPhoto" Type="image" />
+          <Property Name="ownershipCP" Type="image" />
+          <Property Name="info" Type="varchar" MaxLength="255" />
+          <Property Name="dateAdded" Type="datetime" />
+          <Property Name="isNew" Type="bit" Nullable="false" />
+          <Property Name="isVisable" Type="bit" Nullable="false" />
+          <Property Name="sellingDate" Type="date" />
+          <Property Name="buyerId" Type="int" />
+          <Property Name="isSold" Type="bit" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+          <Property Name="joinDate" Type="datetime" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="carDealershipDBModelStoreContainer">
+          <EntitySet Name="carsForRent" EntityType="Self.carsForRent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="carsForSale" EntityType="Self.carsForSale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="carDealershipDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="carsForRent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="manufactureYear" Type="Int32" />
+          <Property Name="rentPerDay" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rentPricePerMonth" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="rentPricePerYear" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="carPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="info" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dateAdded" Type="DateTime" Precision="3" />
+          <Property Name="isVisable" Type="Boolean" Nullable="false" />
+          <Property Name="bookedUpDate" Type="DateTime" Precision="0" />
+          <Property Name="endOfRentDate" Type="DateTime" Precision="0" />
+          <Property Name="renterId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="carsForSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="manufactureYear" Type="Int32" />
+          <Property Name="color" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isAutoGear" Type="Boolean" />
+          <Property Name="knownIssues" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sellingPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="isFinalPrice" Type="Boolean" />
+          <Property Name="carPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ownershipCP" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="info" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dateAdded" Type="DateTime" Precision="3" />
+          <Property Name="isNew" Type="Boolean" Nullable="false" />
+          <Property Name="isVisable" Type="Boolean" Nullable="false" />
+          <Property Name="sellingDate" Type="DateTime" Precision="0" />
+          <Property Name="buyerId" Type="Int32" />
+          <Property Name="isSold" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="joinDate" Type="DateTime" Precision="3" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="carDealershipDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="carsForRent" EntityType="Self.carsForRent" />
+          <EntitySet Name="carsForSale" EntityType="Self.carsForSale" />
+          <EntitySet Name="login" EntityType="Self.login" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="carDealershipDBModelStoreContainer" CdmEntityContainer="carDealershipDBEntities1">
+          <EntitySetMapping Name="carsForRent">
+            <EntityTypeMapping TypeName="carDealershipDBModel.carsForRent">
+              <MappingFragment StoreEntitySet="carsForRent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="manufactureYear" ColumnName="manufactureYear" />
+                <ScalarProperty Name="rentPerDay" ColumnName="rentPerDay" />
+                <ScalarProperty Name="rentPricePerMonth" ColumnName="rentPricePerMonth" />
+                <ScalarProperty Name="rentPricePerYear" ColumnName="rentPricePerYear" />
+                <ScalarProperty Name="carPhoto" ColumnName="carPhoto" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="isVisable" ColumnName="isVisable" />
+                <ScalarProperty Name="bookedUpDate" ColumnName="bookedUpDate" />
+                <ScalarProperty Name="endOfRentDate" ColumnName="endOfRentDate" />
+                <ScalarProperty Name="renterId" ColumnName="renterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carsForSale">
+            <EntityTypeMapping TypeName="carDealershipDBModel.carsForSale">
+              <MappingFragment StoreEntitySet="carsForSale">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="manufactureYear" ColumnName="manufactureYear" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="isAutoGear" ColumnName="isAutoGear" />
+                <ScalarProperty Name="knownIssues" ColumnName="knownIssues" />
+                <ScalarProperty Name="sellingPrice" ColumnName="sellingPrice" />
+                <ScalarProperty Name="isFinalPrice" ColumnName="isFinalPrice" />
+                <ScalarProperty Name="carPhoto" ColumnName="carPhoto" />
+                <ScalarProperty Name="ownershipCP" ColumnName="ownershipCP" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="isNew" ColumnName="isNew" />
+                <ScalarProperty Name="isVisable" ColumnName="isVisable" />
+                <ScalarProperty Name="sellingDate" ColumnName="sellingDate" />
+                <ScalarProperty Name="buyerId" ColumnName="buyerId" />
+                <ScalarProperty Name="isSold" ColumnName="isSold" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="carDealershipDBModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
